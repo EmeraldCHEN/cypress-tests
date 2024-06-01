@@ -12,4 +12,4 @@ The tests are designed to validate the functionalities of the Saucedemo web appl
 - Clone this repository
 - Install dependencies `npm install`
 - Run the tests `npm run cy:open` and select the test spec
-- See more [Command Line](https://docs.cypress.io/guides/guides/command-line)
+- [How to run Cypress from the command line](https://docs.cypress.io/guides/guides/command-line)
