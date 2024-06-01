@@ -4,12 +4,12 @@ The tests are designed to validate the functionalities of the Saucedemo web appl
 
 # Key Features:
 
-    - Comprehensive suite of tests covering login, product browsing, shopping cart and checkout functionalities
-    - Utilizes Cypress for efficient and readable UI automation
+- Comprehensive suite of tests covering login, product browsing, shopping cart and checkout functionalities
+- Utilizes Cypress for efficient and readable UI automation
 
 # Getting Started:
 
-    - Clone this repository
-    - Install dependencies `npm install`
-    - Run the tests `npm run cy:open` and select the test spec
-    - See more [Command Line](https://docs.cypress.io/guides/guides/command-line)
+- Clone this repository
+- Install dependencies `npm install`
+- Run the tests `npm run cy:open` and select the test spec
+- See more [Command Line](https://docs.cypress.io/guides/guides/command-line)
