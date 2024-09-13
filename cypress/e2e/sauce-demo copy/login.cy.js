@@ -1,7 +1,7 @@
 import {
   Login,
   Products
-} from '../../support/pages/sauce-demo';
+} from '../../support/pages';
 import { constants } from '../../support/constants';
 
 describe('Saucedemo Login', () => { 

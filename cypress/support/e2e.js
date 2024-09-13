@@ -15,7 +15,6 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-Cypress.config('baseUrl', 'https://www.saucedemo.com/');
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

@@ -1,0 +1,6 @@
+# Dependency directories
+node_modules/
+
+# Cypress temporary artifacts
+cypress/videos
+cypress/screenshots
