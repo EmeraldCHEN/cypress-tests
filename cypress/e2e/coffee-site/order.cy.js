@@ -1,6 +1,21 @@
-describe('Coffee Site Tests', () => {
+import { Menu, Cart } from '../../support/pages/coffee-site';
+import { constants } from '../../support/constants';
+  
+describe('Coffee Site Tests - Order Coffee', () => {
+  const menu = new Menu();
+  const cart = new Cart();
+
   beforeEach(() => {
     cy.visit(Cypress.env('baseUrlCoffeeSite'));
+  });
+
+
+  it.only('adds the coffee to cart and chekout', () => {
+    menu.addCoffeeToCart(constants.coffee.espresso);
+    menu.validateCheckoutAmountIsGreaterThan(9.9);
+    cart.clickCart();
+    cart.checkCartContains(constants.coffee.espresso);
+    cart.clickCheckoutButton();
   });
 
   it('should interact with the coffee ordering form', () => {

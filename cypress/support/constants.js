@@ -6,5 +6,8 @@ export const constants = {
   passwords: {
     validPassword: 'secret_sauce',
     errorPassword: 'error_P'
+  },
+  coffee: {
+    espresso: 'Espresso',
   }
 }

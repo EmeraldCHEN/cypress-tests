@@ -1,3 +1,2 @@
-export * from './products';
+export * from './menu';
 export * from './cart';
-export * from './checkout';
