@@ -20,3 +20,5 @@ The tests are designed to validate the functionalities of the [Saucedemo web app
 
 
 - [How to run Cypress from the command line](https://docs.cypress.io/guides/guides/command-line)
+
+- Use [Page Object Model (POM) in Test Automation](https://emerald-software-testing.blogspot.com/2024/08/page-object-model-pom-in-test.html) to maintain the robustness and scalability of test scripts
