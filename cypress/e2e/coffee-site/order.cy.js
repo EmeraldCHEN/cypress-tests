@@ -7,51 +7,39 @@ describe('Coffee Site Tests - Order Coffee', () => {
 
   beforeEach(() => {
     cy.visit(Cypress.env('baseUrlCoffeeSite'));
-  });
-
-
-  it.only('adds the coffee to cart and chekout', () => {
     menu.addCoffeeToCart(constants.coffee.espresso);
     menu.validateCheckoutAmountIsGreaterThan(9.9);
-    cart.clickCart();
-    cart.checkCartContains(constants.coffee.espresso);
-    cart.clickCheckoutButton();
   });
 
-  it('should interact with the coffee ordering form', () => {
-    // Fill in the order form
-    cy.get('input[name="name"]').type('John Doe');
-    cy.get('input[name="email"]').type('john.doe@example.com');
-    
-    // Select coffee size
-    cy.get('select[name="size"]').select('Large');
-    
-    // Check extra options
-    cy.get('input[name="extra"]').check('Milk');
-    cy.get('input[name="extra"]').check('Sugar');
-    
-    // Submit the form
-    cy.get('button[type="submit"]').click();
 
-    // Verify submission success message
-    cy.get('.message').should('contain', 'Thank you for your order');
+  it('adds the coffee to cart and chekout to order the coffee', () => {
+    cart.clickCartIcon();
+    cart.verifyItemInCart(constants.coffee.espresso);
+    cart.clickCheckoutButton();
+    cart.enterNameInCoffeeOrderingForm('Coffee XYZ');
+    cart.enterEmailInCoffeeOrderingForm(constants.coffeeOrderEmail.valid);
+    cart.submitPayment();
+    menu.verifySuccessOrderMessage(constants.message.successCoffeeOrder);
+    menu.verifyItemNumberInCart(0);
+  });
+
+  it('should not be able to order coffee with an invalid email', () => {
+    menu.clickCheckoutButton();
+    cart.enterNameInCoffeeOrderingForm('XYZ');
+    cart.enterEmailInCoffeeOrderingForm(constants.coffeeOrderEmail.invalid);
+    cart.submitPayment();
+    cart.verifyCoffeeOrderingFormSectionContains('Payment details');
+    cart.closeCoffeeOrderingForm();
+    menu.verifyItemNumberInCart(1);
   });
 
   it('should validate required fields', () => {
-    // Try to submit the form without filling it
-    cy.get('button[type="submit"]').click();
-    
-    // Verify error messages for required fields
-    cy.get('input[name="name"] + .error').should('contain', 'Name is required');
-    cy.get('input[name="email"] + .error').should('contain', 'Email is required');
-  });
-
-  it('should validate email format', () => {
-    // Enter an invalid email
-    cy.get('input[name="email"]').type('invalid-email');
-    cy.get('button[type="submit"]').click();
-
-    // Verify email format error message
-    cy.get('input[name="email"] + .error').should('contain', 'Invalid email format');
+    // Submit the form without filling it
+    menu.clickCheckoutButton();
+    cart.submitPayment();
+    cart.verifyEmptyNameInput();
+    cart.verifyEmptyEmailInput();
+    cart.closeCoffeeOrderingForm();
+    menu.verifyItemNumberInCart(1);
   });
 });

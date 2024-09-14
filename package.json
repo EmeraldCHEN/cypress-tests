@@ -4,6 +4,9 @@
     "prettier": "^3.3.3"
   },
   "scripts": {
-    "cy:open": "cypress open"
+    "open": "cypress open",
+    "electron": "cypress run",
+    "chrome": "cypress run --browser chrome",
+    "firefox": "cypress run --browser firefox"
   }
 }

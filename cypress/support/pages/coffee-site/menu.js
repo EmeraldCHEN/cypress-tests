@@ -5,6 +5,8 @@ export class Menu {
   static coffeeMochaImg = '[data-test=Mocha]';
   static coffeeFlatWhiteImg = '[data-test=Flat_White]';
   static checkoutButton = '[data-test=checkout]';
+  static successMessage = '.success';
+  static itemNumberInCart = ':nth-child(2) > a';
 
   checkPageTitleIncludes(text) {
     cy.title().should('include', text);
@@ -21,6 +23,10 @@ export class Menu {
       default:
         // code block
     }
+  }
+
+  clickCheckoutButton() {
+    cy.get(Menu.checkoutButton).click();
   }
 
   verifyCheckoutButtonVisibility() {
@@ -44,5 +50,11 @@ export class Menu {
     });
   }
 
+  verifySuccessOrderMessage(message) {
+    cy.get(Menu.successMessage).should('contain', message);
+  }
 
+  verifyItemNumberInCart(number) {
+    cy.get(Menu.itemNumberInCart).should('contain', number);
+  }
 }
