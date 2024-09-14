@@ -1,10 +1,11 @@
 # Cypress End-to-End Automation Tests
 This repository contains automated end-to-end (E2E) tests written in JavaScript using the [Cypress testing framework](https://docs.cypress.io/guides/overview/why-cypress).  
-The tests are designed to validate the functionalities of the [Saucedemo web application](https://www.saucedemo.com).
+
+The tests are designed to validate the functionalities of the [Saucedemo web application](https://www.saucedemo.com) and [Coffee site](https://seleniumbase.io/coffee/).
 
 # Key Features:
 
-- Comprehensive suite of tests covering login, product browsing, shopping cart and checkout functionalities
+- Tests cover login, product browsing, shopping cart and checkout functionalities
 - Utilizes Cypress for efficient and readable UI automation
 
 # Getting Started:
@@ -18,6 +19,8 @@ The tests are designed to validate the functionalities of the [Saucedemo web app
 
 ![Test Results](images/screenshot-of-test-results.png)
 
+
+# More Info:
 
 - [How to run Cypress from the command line](https://docs.cypress.io/guides/guides/command-line)
 
