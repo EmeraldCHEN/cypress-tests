@@ -3,7 +3,7 @@ import {
   Products,
   Cart,
   Checkout
-} from '../../support/page-helpers';
+} from '../../support/pages/sauce-demo';
 import { constants } from '../../support/constants';
 
 describe('Saucedemo checkout in a mobile browser', () => { 

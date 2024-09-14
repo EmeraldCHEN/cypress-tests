@@ -1,16 +1,15 @@
 import {
   Login,
   Products
-} from '../../support/page-helpers';
+} from '../../support/pages/sauce-demo';
 import { constants } from '../../support/constants';
 
 describe('Saucedemo Login', () => { 
   const logIn = new Login();
   const products = new Products();
-  const saucedemoUrl = Cypress.config('baseUrl');
 
   beforeEach(() => {
-    cy.visit(saucedemoUrl);
+    cy.visit(Cypress.env('baseUrlSauceDemo'));
   })
   
   it('should login with valid credentials', () => {
@@ -19,7 +18,7 @@ describe('Saucedemo Login', () => {
     products.verifyProductsPageTitleVisible()
     products.clickHamburgerMenuIcon();
     products.clickLogoutSidebarLink();
-    logIn.verifyLoginPageUrl(saucedemoUrl);         
+    logIn.verifyLoginPageUrl(Cypress.env('baseUrlSauceDemo'));         
   });
 
   it('should not login with invalid credentials', () => {
