@@ -15,9 +15,11 @@ The tests are designed to validate the functionalities of the [Saucedemo web app
 - Run `npm run open` then select 'E2E Testing' and choose your preferred browser   to run the test spec
 - Run tests specifying a single test file to run instead of all tests, e.g. `npx cypress run --spec "cypress/e2e/coffee-site/order*"`
 
-![Test Results](images/test-results-1.png)
 
-![Test Results](images/screenshot-of-test-results.png)
+<img src="images/test-results-1.png" alt="Test Results" title="Test Results" width="666" />
+
+<img src="images/screenshot-of-test-results.png" alt="Test Results" title="Test Results" width="666" />
+
 
 
 # More Info:
